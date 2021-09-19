@@ -1,0 +1,183 @@
+(defvar CURRENT_CMD "nah")
+
+(defwidget confirmw []
+  (box
+    :class "confirm"
+    :vexpand true
+    :hexpand true
+    (confirm_content)
+    ))
+
+(defwidget powermenuw []
+  (box
+    :class "blur"
+    :vexpand true
+    :hexpand true
+    (blur)))
+
+(defwidget mixerw []
+  (box
+    :class "mixer"
+    :vexpand true
+    :hexpand true
+    :orientation "h"
+    :space-evenly false
+    :spacing 30
+    (metric :label "B" :value volume1 :onchange "pa_volume Brave {}")  
+    (metric :label "D" :value volume2 :onchange "pa_volume 'WEBRTC VoiceEngine' {}")  
+    (metric :label "S" :value volume3 :onchange "pa_volume music {}")  
+    (metric :label "T" :value volume4 :onchange "pa_volume phone {}")  
+))
+
+(defwidget metric [label value onchange]
+  (box :orientation "v"
+       :class "metric"
+       :spacing 10
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 100
+           :active {onchange != ""}
+           :value value
+           :onchange onchange)
+    (label :class "percentage" :text "${value}%")))
+
+(defwidget blur []
+  (box 
+    :orientation "v"
+    :space-evenly false
+    :valign "center"
+    :halign "center"
+    :spacing 40
+    (label :class "message" :text "Goodbye, Carlos.")
+    (buttons)
+  ))
+
+(defwidget confirm_content []
+  (box
+    :valign "center"
+    :orientation "v"
+    :spacing 30
+    :space-evenly false
+    "¿Estas seguro?"
+    (buttons2)
+    ))
+
+(defwidget buttons []
+  (box
+    :halign "center"
+    :space-evenly true
+    :orientation "h"
+    :spacing 40
+    (tile
+      :type "poweroff"
+      :icon ""
+      :tooltip "Apagar"
+      :class "tile poweroff"
+      :cmnd 'eww open confirm; eww update CURRENT_CMD="systemctl poweroff"')
+    (tile
+      :type "reboot"
+      :icon ""
+      :tooltip "Reiniciar"
+      :class "tile reboot"
+      :cmnd 'eww open confirm; eww update CURRENT_CMD="systemctl reboot"')
+    (tile
+      :type "lock"
+      :icon ""
+      :tooltip "bloquear"
+      :class "tile lock"
+      :cmnd "eww close-all")
+    (tile
+      :type "sleep"
+      :icon ""
+      :tooltip "suspender"
+      :class "tile sleep"
+      :cmnd "eww close-all")
+    (tile
+      :type "logout"
+      :icon "﫼"
+      :tooltip "cerrar sesion"
+      :class "tile logout"
+      :cmnd 'eww open confirm')
+    ))
+
+(defwidget buttons2 []
+  (box
+    :halign "center"
+    :space-evenly true
+    :orientation "h"
+    :spacing 40
+    (button
+      :class "confirm_button confirm_button_yes"
+      :onclick CURRENT_CMD
+      "Si")
+    (button
+      :class "confirm_button confirm_button_no"
+      :onclick "eww close confirm"
+      "No")
+    ))
+
+(defwidget tile [icon class cmnd type tooltip]
+  (box
+    :height "320px"
+    :width "320px"
+    :cursor "GDK_HAND2"
+    :orientation "v"
+    :spacing 30
+    :space-evenly false
+    :tooltip tooltip
+    (button
+      :class class
+      :onclick cmnd
+      icon))
+  )
+
+(defpoll volume1 :interval "1s"
+  'pa_volume | grep "Brave" | grep -o "[0-9]*"')
+
+(defpoll volume2 :interval "1s"
+  'pa_volume | grep "WEBRTC VoiceEngine" | grep -o "[0-9]*"')
+
+(defpoll volume3 :interval "1s"
+  'pa_volume | grep "music" | grep -o "[0-9]*"')
+
+(defpoll volume4 :interval "1s"
+  'pa_volume | grep "phone" | grep -o "[0-9]*"')
+
+
+
+(defwindow powermenu
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "100%"
+                      :anchor "center" )
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  (powermenuw))
+
+
+(defwindow confirm
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "100%")
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  (confirmw))
+
+
+(defwindow mixer
+  :monitor 0
+  :geometry (geometry :x "70%"
+		      :y "70px"
+		      :width "400px"
+		      :height "250px")
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  (mixerw))

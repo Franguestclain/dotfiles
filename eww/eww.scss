@@ -1,0 +1,105 @@
+* {
+  all: unset;
+}
+
+.blur {
+  background-color: #101212;
+}
+
+.message {
+  font-size: 90px;
+}
+
+.tile {
+  font-size: 60px;
+  background-color: #101212;
+  padding: 30px 40px;
+  border-radius: 12px;
+  border: 2px solid #dcd4af;
+  color: #dcd4af;
+}
+
+.tile:hover {
+  background-color: #dcd4af;
+  color: #101212;
+}
+
+.confirm {
+  background-color: #101212;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.confirm_button {
+  padding: 20px 50px;
+  font-size: 20px;
+  border-radius: 12px;
+  border: 2px solid #dcd4af;
+  color: #dcd4af;
+}
+
+.confirm_button:hover {
+  background-color: #dcd4af;
+  color: #101212;
+}
+
+/*.confirm_button_yes {
+  background-color: #61afef;
+  color: #fff;
+}
+
+.confirm_button_yes:hover {
+  background-color: #4a8ec5;
+}
+
+.confirm_button_no {
+  background-color: #e06c75;
+  color: #fff;
+}
+
+.confirm_button_no:hover {
+  background-color: #c55962;
+}
+*/
+.poweroff {
+  color: #e06c75;
+}
+
+.reboot {
+  color: #61afef;
+}
+
+.lock {
+  color: #e5c07b;
+}
+
+.sleep {
+  color: #c678dd;
+}
+
+.logout {
+  color: #98c379;
+  font-size: 50px;
+}
+
+.mixer {
+  background-color: blue;
+  color: red;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D35D6E;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
