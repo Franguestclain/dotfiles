@@ -112,3 +112,4 @@ export SPICETIFY_INSTALL="/home/ragnarok/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 
 (cat ~/.cache/wal/sequences &)
+alias vim='/home/ragnarok/.local/bin/nvim.appimage'
