@@ -11,7 +11,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 ## Launch
 
 ## Left bar
-polybar log -c ~/.config/polybar/current.ini &
 polybar secondary -c ~/.config/polybar/current.ini &
 polybar player -c ~/.config/polybar/current.ini &
 

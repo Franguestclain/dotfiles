@@ -1,4 +1,6 @@
 (defvar CURRENT_CMD "nah")
+(defvar MIXER_STATE "closed")
+
 
 (defwidget confirmw []
   (box
@@ -19,8 +21,8 @@
   (box
     :class "mixer"
     :vexpand true
-    :hexpand true
-    :orientation "h"
+    :hexpand true   
+    :orientation "v"
     :space-evenly false
     :spacing 30
     (metric :label "B" :value volume1 :onchange "pa_volume Brave {}")  
@@ -30,9 +32,10 @@
 ))
 
 (defwidget metric [label value onchange]
-  (box :orientation "v"
+  (box :orientation "h"
        :class "metric"
        :spacing 10
+       :halign "center"
        :space-evenly false
     (box :class "label" label)
     (scale :min 0
@@ -173,11 +176,11 @@
 
 (defwindow mixer
   :monitor 0
-  :geometry (geometry :x "70%"
+  :geometry (geometry :x "83%"
 		      :y "70px"
-		      :width "400px"
-		      :height "250px")
+		      :width "250px"
+		      :height "210px")
   :stacking "fg"
-  :windowtype "normal"
+  :windowtype "dock"
   :wm-ignore true
   (mixerw))

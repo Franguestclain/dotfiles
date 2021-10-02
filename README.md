@@ -7,3 +7,4 @@ Programs:
 - eww
 - feh
 - rofi
+- pa_volume (to control apps volume)
