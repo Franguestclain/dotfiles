@@ -141,7 +141,7 @@ XF86AudioPrev
 
 # printscreen
 Print
-	flameshot full -c -p ~/Imagenes/Screenshots
+	flameshot full -c -p ~/Screenshots
 
 # powermenu
 alt + shift + r
