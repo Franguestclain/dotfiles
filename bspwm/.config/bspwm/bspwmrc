@@ -16,11 +16,14 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a matplotlib state=floating
+
 feh --bg-fill $HOME/dotfiles/wallpapers/wp1.png
 wal -i $HOME/dotfiles/wallpapers/wp1.png &
 . "${HOME}/.cache/wal/colors.sh"
 xsetroot -cursor_name left_ptr &
-~/.config/polybar/./launch.sh
+~/dotfiles/polybar/.config/polybar/./launch.sh
 bspc config focus_follows_pointer true
 picom --experimental-backends &
 bspc config border_width 0
+wmname LG3D

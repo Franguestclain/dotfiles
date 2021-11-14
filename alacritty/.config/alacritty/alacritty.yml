@@ -99,7 +99,7 @@ scrolling:
 
 font:
   # Point size
-  size: 12
+  size: 11
   normal:
     family: "JetBrains Mono"
     style: Regular

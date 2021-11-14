@@ -72,7 +72,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	zsh_reload
 	yarn
 	nvm
 	zsh-autosuggestions
@@ -110,6 +109,8 @@ path+=$HOME/.local/bin/
 
 export SPICETIFY_INSTALL="/home/ragnarok/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
+path+=$HOME/.dotnet/tools
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 (cat ~/.cache/wal/sequences &)
-alias vim='/home/ragnarok/.local/bin/nvim.appimage'
+alias vim='nvim'

@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show drun
+        ~/.config/rofi/bin/launcher_colorful
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -120,6 +120,9 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# move window to a preselect space
+super + shift + m
+        bspc node -n last.!automatic
 
 # Volume Control
 XF86AudioLowerVolume
