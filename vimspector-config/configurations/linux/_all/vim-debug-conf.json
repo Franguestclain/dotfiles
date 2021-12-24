@@ -1,0 +1,36 @@
+{
+  "configurations": {
+    "node": {
+      "adapter": "vscode-node",
+      "default": true,
+      "breakpoints": {
+        "exception": {
+          "all": "N",
+          "uncaught": "N"
+        }
+      },
+      "configuration": {
+        "name": "Attach to process",
+        "type": "node",
+        "request": "attach",
+        "stopOnEntry": true,
+        "sourceMaps": true,
+        "skipFiles": ["<node_internals>/**/*.js"],
+        "processId": "${processId}"
+      }
+    },
+    "python: Launch": {
+      "adapter": "debugpy",
+      "configuration": {
+        "name": "Python: Launch",
+        "type": "python",
+        "request": "launch",
+        "python": "/usr/bin/python3",
+        "stopOnEntry": true,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "program": "${file}"
+      }
+    }
+  }
+}

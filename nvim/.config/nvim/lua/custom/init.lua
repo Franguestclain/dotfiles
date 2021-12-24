@@ -38,6 +38,32 @@ local hooks = require "core.hooks"
 --    }
 -- end)
 
+vim.g.vimspector_base_dir = "/home/ragnarok/.config/vimspector-config"
+vim.g.vimspector_enable_mappings="HUMAN"
+  
+hooks.add("install_plugins", function(use)
+  use {
+    "puremourning/vimspector",
+  }
+end)
+
+
+hooks.add("install_plugins", function(use)
+  use {
+    "andweeb/presence.nvim",
+  }
+end)
+
+hooks.add("install_plugins", function(use)
+  use {
+      "jose-elias-alvarez/null-ls.nvim",
+      after = "nvim-lspconfig",
+      config = function()
+         require("custom.plugins.configs.null-ls").setup()
+      end,
+   }
+end)
+
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
 -- then source it with
 

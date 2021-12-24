@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 case "$(eww state -a | grep 'MIXER_STATE' | awk '{print $2}')" in
    closed)

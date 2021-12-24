@@ -9,6 +9,9 @@
 - rofi
 - pa_volume (to control apps volume)
 
+## Stow vimspector
+`stow -t ~/.config/vimspector-config vimspector-config`
+
 # Screenshots
 ![Nothing opened](/screenshots/2021-11-14_10-58.png)
 ![Some neofetch and spotify action](/screenshots/2021-11-14_11-19.png)
