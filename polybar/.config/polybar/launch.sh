@@ -15,6 +15,7 @@ polybar secondary -c ~/.config/polybar/current.ini &
 polybar player -c ~/.config/polybar/current.ini &
 
 ## Right bar
+polybar trays -c ~/.config/polybar/current.ini &
 polybar top -c ~/.config/polybar/current.ini &
 polybar primary -c ~/.config/polybar/current.ini &
 

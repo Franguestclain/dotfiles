@@ -17,9 +17,10 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a matplotlib state=floating
+bspc rule -a Discord desktop='^0' focus=off follow=off
 
-feh --bg-fill $HOME/dotfiles/wallpapers/wp1.png
-wal -i $HOME/dotfiles/wallpapers/wp1.png &
+feh --bg-fill $HOME/dotfiles/wallpapers/silHouse.jpg
+wal -i $HOME/dotfiles/wallpapers/silHouse.jpg &
 . "${HOME}/.cache/wal/colors.sh"
 xsetroot -cursor_name left_ptr &
 ~/dotfiles/polybar/.config/polybar/./launch.sh

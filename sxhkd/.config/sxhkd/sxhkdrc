@@ -149,6 +149,10 @@ Print
 # powermenu
 alt + shift + r
 	~/.local/bin/eww open powermenu
+#
+# mixer volume widget
+alt + shift + m
+	~/dotfiles/polybar/.config/polybar/scripts/./mixer_volume.sh
 
 # close all eww widgets
 alt + shift + x

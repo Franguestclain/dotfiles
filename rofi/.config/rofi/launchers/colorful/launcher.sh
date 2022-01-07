@@ -15,12 +15,17 @@ theme="style_2"
 dir="$HOME/.config/rofi/launchers/colorful"
 
 # dark
-ALPHA="#00000000"
-BG="#000000ff"
-#FG="#FFFFFFff"
-FG="#EEEAD6ff"
+# ALPHA="#00000000"
+# BG="#000000ff"
+# FG="#FFFFFFff"
 #SELECT="#101010ff"
-SELECT="#908B75ff"
+
+# WAL 
+ALPHA="#00000000"
+BG=$(cat ~/.cache/wal/colors | awk 'FNR == 1 {print}')
+FG=$(cat ~/.cache/wal/colors | awk 'FNR == 8 {print}')
+SELECT=$(cat ~/.cache/wal/colors | awk 'FNR == 3 {print}')
+ACCENT=$(cat ~/.cache/wal/colors | awk 'FNR == 7 {print}')
 
 # light
 #ALPHA="#00000000"
@@ -32,7 +37,6 @@ SELECT="#908B75ff"
 COLORS=('#EC7875' '#61C766' '#FDD835' '#42A5F5' '#BA68C8' '#4DD0E1' '#00B19F' \
 		'#FBC02D' '#E57C46' '#AC8476' '#6D8895' '#EC407A' '#B9C244' '#6C77BB')
 #ACCENT="${COLORS[$(( $RANDOM % 14 ))]}ff"
-ACCENT="#DCD4AF"
 
 # overwrite colors file
 cat > $dir/colors.rasi <<- EOF

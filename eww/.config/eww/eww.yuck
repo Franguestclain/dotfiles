@@ -122,9 +122,8 @@
 
 (defwidget tile [icon class cmnd type tooltip]
   (box
-    :height "10%"
-    :width "320px"
-    :cursor "GDK_HAND2"
+    :height "175"
+    :width "175"
     :orientation "v"
     :spacing 30
     :space-evenly false

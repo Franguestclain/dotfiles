@@ -3,7 +3,7 @@
 }
 
 .blur {
-  background-color: #101212;
+  background-color: #0b0110;
 }
 
 .message {
@@ -12,20 +12,20 @@
 
 .tile {
   font-size: 60px;
-  background-color: #101212;
+  background-color: #0b0110;
   padding: 30px 40px;
   border-radius: 12px;
-  border: 2px solid #dcd4af;
-  color: #dcd4af;
+  border: 2px solid #d1174c;
+  color: #d1174c;
 }
 
 .tile:hover {
-  background-color: #dcd4af;
-  color: #101212;
+  background-color: #d1174c;
+  color: #0b0110;
 }
 
 .confirm {
-  background-color: #101212;
+  background-color: #0b0110;
   border-radius: 12px;
   padding: 20px;
   font-size: 30px;
@@ -35,13 +35,13 @@
   padding: 20px 50px;
   font-size: 20px;
   border-radius: 12px;
-  border: 2px solid #dcd4af;
-  color: #dcd4af;
+  border: 2px solid #d1174c;
+  color: #d1174c;
 }
 
 .confirm_button:hover {
-  background-color: #dcd4af;
-  color: #101212;
+  background-color: #d1174c;
+  color: #0b0110;
 }
 
 /*.confirm_button_yes {
@@ -80,24 +80,23 @@
 
 .logout {
   color: #98c379;
-  font-size: 50px;
 }
 
 .mixer {
-  background-color: #101212;
-  color: #DCD4AF;
+  background-color: #0b0110;
+  color: #d1174c;
   padding: 20px;
 }
 
 .metric scale trough highlight {
   all: unset;
-  background-color: #DCD4AF;
+  background-color: #981643;
   color: #000000;
   border-radius: 10px;
 }
 .metric scale trough {
   all: unset;
-  background-color: #4e4e4e;
+  background-color: #eb819a;
   border-radius: 50px;
   min-height: 10px;
   min-width: 90px;

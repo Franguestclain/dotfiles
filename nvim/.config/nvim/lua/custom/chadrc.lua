@@ -15,7 +15,7 @@ local M = {}
  }
 
  M.ui = {
-   theme = "lfgruv"
+   theme = "tokyodark"
  }
 
 -- NvChad included plugin options & overrides
