@@ -114,7 +114,7 @@
       "Si")
     (button
       :class "confirm_button confirm_button_no"
-      :onclick "eww close confirm"
+      :onclick "~/.local/bin/eww close confirm"
       "No")
     ))
 
