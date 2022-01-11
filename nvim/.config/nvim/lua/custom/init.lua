@@ -1,10 +1,6 @@
 local map = require("core.utils").map
 local customPlugins = require("core.customPlugins")
 
--- Vim globals
-vim.g.vimspector_base_dir = "~/.config/vimspector-config"
-vim.g.vimspector_enable_mappings = "HUMAN"
-
 -- MAPPINGS
 map("n", "<leader>ft", ":TodoTelescope<CR>")
 
@@ -13,15 +9,17 @@ customPlugins.add(function(use)
 	use({
 		"puremourning/vimspector",
 	})
-end)
 
-customPlugins.add(function(use)
 	use({
 		"andweeb/presence.nvim",
+		config = function()
+			require("presence"):setup({
+				enable_line_number = true,
+				workspace_text = "Valiendo madre en %s",
+			})
+		end,
 	})
-end)
 
-customPlugins.add(function(use)
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		after = "nvim-lspconfig",
@@ -29,20 +27,15 @@ customPlugins.add(function(use)
 			require("custom.plugins.configs.null-ls").setup()
 		end,
 	})
-end)
 
-customPlugins.add(function(use)
 	use({
 		"folke/trouble.nvim",
-		require = "kyazdani42/nvim-web-devicons",
-		after = "telescope.nvim",
+		after = "nvim-web-devicons",
 		config = function()
 			require("trouble").setup()
 		end,
 	})
-end)
 
-customPlugins.add(function(use)
 	use({
 		"folke/todo-comments.nvim",
 		after = "trouble.nvim",
@@ -51,3 +44,7 @@ customPlugins.add(function(use)
 		end,
 	})
 end)
+
+-- Vim globals
+-- vim.g.vimspector_base_dir = "~/.config/vimspector-config"
+vim.g.vimspector_enable_mappings = "HUMAN"

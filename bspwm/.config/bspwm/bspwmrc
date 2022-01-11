@@ -28,6 +28,8 @@ bspc config focus_follows_pointer true
 picom --experimental-backends &
 bspc config border_width 0
 wmname LG3D
+discord --start-minimized &
+eww daemon --restart
 
 # see https://unix.stackexchange.com/a/295652/332452
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh

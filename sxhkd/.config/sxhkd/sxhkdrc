@@ -152,7 +152,7 @@ alt + shift + r
 #
 # mixer volume widget
 alt + shift + m
-	~/dotfiles/polybar/.config/polybar/scripts/./mixer_volume.sh
+	~/.local/bin/eww open --toggle mixer
 
 # close all eww widgets
 alt + shift + x

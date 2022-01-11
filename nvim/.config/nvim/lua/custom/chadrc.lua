@@ -21,7 +21,7 @@ local M = {}
 -- NvChad included plugin options & overrides
 M.plugins = {
   status = {
-    telescope_media = true,
+    telescope_media = false,
   },
   options = {
     lspconfig = {

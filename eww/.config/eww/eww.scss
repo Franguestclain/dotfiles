@@ -84,8 +84,12 @@
 
 .mixer {
   background-color: #0b0110;
-  color: #d1174c;
+  color: #eb819a;
   padding: 20px;
+}
+
+.mixer .percentage {
+  font-weight: bold;
 }
 
 .metric scale trough highlight {

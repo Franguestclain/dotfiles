@@ -1,6 +1,4 @@
 (defvar CURRENT_CMD "nah")
-(defvar MIXER_STATE "closed")
-
 
 (defwidget confirmw []
   (box
@@ -25,10 +23,10 @@
     :orientation "v"
     :space-evenly false
     :spacing 30
-    (metric :label "B" :value volume1 :onchange "pa_volume Brave {}")  
-    (metric :label "D" :value volume2 :onchange "pa_volume 'WEBRTC VoiceEngine' {}")  
-    (metric :label "S" :value volume3 :onchange "pa_volume music {}")  
-    (metric :label "T" :value volume4 :onchange "pa_volume phone {}")  
+    (metric :label "" :value volume1 :onchange "pa_volume Brave {}")  
+    (metric :label "" :value volume2 :onchange "pa_volume 'WEBRTC VoiceEngine' {}")  
+    (metric :label "" :value volume3 :onchange "pa_volume music {}")  
+    (metric :label "" :value volume4 :onchange "pa_volume phone {}")  
 ))
 
 (defwidget metric [label value onchange]
@@ -63,7 +61,7 @@
     :spacing 30
     :space-evenly false
     "¿Estas seguro?"
-    (buttons2)
+    (confirm_buttons)
     ))
 
 (defwidget buttons []
@@ -77,34 +75,34 @@
       :icon ""
       :tooltip "Apagar"
       :class "tile poweroff"
-      :cmnd 'eww open confirm; eww update CURRENT_CMD="systemctl poweroff"')
+      :cmnd '~/.local/bin/eww open confirm; ~/.local/bin/eww update CURRENT_CMD="systemctl poweroff"')
     (tile
       :type "reboot"
       :icon ""
       :tooltip "Reiniciar"
       :class "tile reboot"
-      :cmnd 'eww open confirm; eww update CURRENT_CMD="systemctl reboot"')
+      :cmnd '~/.local/bin/eww open confirm; ~/.local/bin/eww update CURRENT_CMD="systemctl reboot"')
     (tile
       :type "lock"
       :icon ""
       :tooltip "bloquear"
       :class "tile lock"
-      :cmnd "eww close-all")
+      :cmnd "~/.local/bin/eww close-all")
     (tile
       :type "sleep"
       :icon ""
       :tooltip "suspender"
       :class "tile sleep"
-      :cmnd "eww close-all")
+      :cmnd "~/.local/bin/eww close-all")
     (tile
       :type "logout"
       :icon "﫼"
       :tooltip "cerrar sesion"
       :class "tile logout"
-      :cmnd 'eww open confirm')
+      :cmnd '~/.local/bin/eww close-all')
     ))
 
-(defwidget buttons2 []
+(defwidget confirm_buttons []
   (box
     :halign "center"
     :space-evenly true
